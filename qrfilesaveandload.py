@@ -38,7 +38,7 @@ def load(output_file_name):
     files = sorted(os.listdir(INPUT_DIR))
     data = []
     for file in files:
-        temp = str(decode(Image.open(f"{INPUT_DIR}/{file}"))[0][0])
+        temp = decode(Image.open(f"{INPUT_DIR}/{file}"))[0][0].decode()
         data.append(temp)
 
     if not os.path.exists(OUTPUT_DIR):
